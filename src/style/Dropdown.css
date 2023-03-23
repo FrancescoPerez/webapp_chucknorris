@@ -1,8 +1,16 @@
-.Dropdown {
-    background-color: #937B63;
-    color: #D5DDBC;
+.Dropdown select {
+    background: transparent;
     width: 450px;
-    height: 55px;   
-    left: 945px;
     font-size: 20px;
-}
+    height: 55px;
+    background-color: #937B63;
+    color: white;
+    font-family: 'IM Fell Great Primer SC', serif;
+
+  }
+  .Dropdown {
+    width: 450px;
+    height: 55px;
+    overflow: hidden;
+    background-color: #937B63;
+  }

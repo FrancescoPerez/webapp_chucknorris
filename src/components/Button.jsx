@@ -4,11 +4,12 @@ import '../style/Button.css'
 function Button({ text, variant, callback}) {
 
   let clickHandler = function(e){
-    console.log(e)
-    console.log(typeof undefined)
+    if(callback != undefined && variant != "disabled"){
+      callback()
+    }
   }
 
-  classRenderer = function (){
+  let classRenderer = function (){
     let classes = [
       'Button', variant
     ]
@@ -23,11 +24,3 @@ function Button({ text, variant, callback}) {
 }
 
 export default Button
-
-/*
-
-<button id={props.id}>{props.children}</button>
-
-const [count, setCount] = useState(0)
-
-*/

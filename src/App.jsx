@@ -2,38 +2,48 @@ import { useState } from 'react'
 import './style/App.css'
 import Button from './components/Button'
 import Dropdown from './components/Dropdown'
+import Text from './components/Text'
+import TestoJoke from './components/TestoJoke'
 
 function App() {
   const [joke, setJoke] = useState("")
+  const [categories, setCategories] = useState([])
 
-let loadJokeCallback = function (){
-  console.log ("ciao")
-  setJoke("testo joke")
-}
+  let url = "https://api.chucknorris.io/jokes/categories";
 
-let copyTextCallback = function (){
-  console.log ("bye")
-}
+  fetch(url).then((resp) => {
+    return resp.json();
+  })
+    .then((data) => {
+      data.unshift("random")
+      setCategories(data)
+    })
+
+  let loadJokeCallback = function () {
+    let catChosen = document.getElementById("dropdown").value
+    let URLO = "https://api.chucknorris.io/jokes/random" + (catChosen != "random" ? "?category=" + catChosen : "")
+    fetch(URLO).then((resp) => {
+      return resp.json();
+    })
+      .then((data) => {
+        setJoke(data.value)
+      })
+  }
+
+  let copyTextCallback = function () {
+    navigator.clipboard.writeText(document.getElementById("jokeToClipboard").innerText);
+  }
 
   return (
     <div className="App">
-      <h1>Webapp API Chuck Norris</h1>
-      <h2>Design di una pagina che utilizza la API di chucknorris.io per generare alla pressione di un pulsante una battuta del tipo che selezioni nel menu a tendina qui sotto.</h2>
-      
+      <Text variant={"primary"}>Webapp API Chuck Norris</Text>
+      <Text variant={"secondary"}>Design di una pagina che utilizza la API di chucknorris.io per generare alla pressione di un pulsante una battuta del tipo che selezioni nel menu a tendina qui sotto.</Text>
+      <TestoJoke id="jokeToClipboard">{joke}</TestoJoke>
       <Button text="CARICA JOKE" callback={loadJokeCallback} />
-      <Button text="COPIA" variant={ joke == "" ? "disabled" : undefined} callback={copyTextCallback}/>
+      <Button text="COPIA" variant={joke == "" ? "disabled" : undefined} callback={copyTextCallback} />
+      <Dropdown id='dropdown' values={categories}></Dropdown>
     </div>
   )
 }
 
 export default App
-
-
-
-/*
-<Button id='load'>CARICA JOKE</Button>
-<Dropdown id='dropdown'></Dropdown>
-
-
-
-*/
