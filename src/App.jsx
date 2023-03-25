@@ -3,7 +3,6 @@ import './style/App.css'
 import Button from './components/Button'
 import Dropdown from './components/Dropdown'
 import Text from './components/Text'
-import TestoJoke from './components/TestoJoke'
 
 function App() {
   const [joke, setJoke] = useState("")
@@ -36,9 +35,9 @@ function App() {
 
   return (
     <div className="App">
-      <Text variant={"primary"}>Webapp API Chuck Norris</Text>
-      <Text variant={"secondary"}>Design di una pagina che utilizza la API di chucknorris.io per generare alla pressione di un pulsante una battuta del tipo che selezioni nel menu a tendina qui sotto.</Text>
-      <TestoJoke id="jokeToClipboard">{joke}</TestoJoke>
+      <Text variant="Title">Webapp API Chuck Norris</Text>
+      <Text variant="subTitle">Design di una pagina che utilizza la API di chucknorris.io per generare alla pressione di un pulsante una battuta del tipo che selezioni nel menu a tendina qui sotto.</Text>
+      <Text variant="copyText" id="jokeToClipboard">{joke}</Text>
       <Button text="CARICA JOKE" callback={loadJokeCallback} />
       <Button text="COPIA" variant={joke == "" ? "disabled" : undefined} callback={copyTextCallback} />
       <Dropdown id='dropdown' values={categories}></Dropdown>

@@ -1,12 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+Great+Primer+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
-.Text.primary{
+.Text.Title{
     color: black;
+    font-size: 49px;
     font-family: 'IM Fell Great Primer SC', serif;
-    font-size: 49px;    
 }
 
-.Text.secondary{
-    color: yellow;
-    font-size: 25px;
+.Text.subTitle{
+    font-size: 25px;  
+    font-family: 'IM Fell Great Primer SC', serif;  
 }
+
+.Text.copyText{
+    font-size: 20px;
+    font-family: 'Inter', sans-serif;
+}
+
 

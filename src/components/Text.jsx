@@ -1,19 +1,18 @@
 import { useState } from 'react'
 import '../style/Text.css'
 
-function Title(props, variant) {
+function Title(props) {
 
     let classRenderer = function (){
         let classes = [
-          'Text', variant
+          'Text', props.variant
         ]
         return classes.join(" ")
       }
 
-
     return (
         <div className={classRenderer()}>
-            <p>{props.children}</p>
+            <p className={props.variant}>{props.children}</p>
         </div>
     )
 }
