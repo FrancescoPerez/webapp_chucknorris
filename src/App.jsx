@@ -34,7 +34,7 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div className="App" align="center">
       <Text variant="Title">Webapp API Chuck Norris</Text>
       <Text variant="subTitle">Design di una pagina che utilizza la API di chucknorris.io per generare alla pressione di un pulsante una battuta del tipo che selezioni nel menu a tendina qui sotto.</Text>
       <Text variant="copyText" id="jokeToClipboard">{joke}</Text>
