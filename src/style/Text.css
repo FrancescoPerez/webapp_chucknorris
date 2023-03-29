@@ -5,16 +5,25 @@
     color: black;
     font-size: 49px;
     font-family: 'IM Fell Great Primer SC', serif;
+    margin-top: 44px;
 }
 
 .Text.subTitle{
     font-size: 25px;  
     font-family: 'IM Fell Great Primer SC', serif;  
+    margin-top: 37px;
+    margin-bottom: 37px;
 }
 
 .Text.copyText{
     font-size: 20px;
     font-family: 'Inter', sans-serif;
+    background-color: white;
+    width: 550px;
+    border: 3px solid #000000;
+    margin-top: 75px;
+    margin-bottom: 74px;
 }
+
 
 

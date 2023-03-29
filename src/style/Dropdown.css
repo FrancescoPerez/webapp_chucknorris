@@ -1,6 +1,6 @@
 .Dropdown select {
     background: transparent;
-    width: 450px;
+    width: 550px;
     font-size: 20px;
     height: 55px;
     background-color: #937B63;
@@ -9,8 +9,10 @@
 
   }
   .Dropdown {
-    width: 450px;
+    width: 550px;
     height: 55px;
     overflow: hidden;
     background-color: #937B63;
+    margin-top: 42px;
   }
+  

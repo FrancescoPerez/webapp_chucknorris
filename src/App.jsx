@@ -37,10 +37,12 @@ function App() {
     <div className="App" align="center">
       <Text variant="Title">Webapp API Chuck Norris</Text>
       <Text variant="subTitle">Design di una pagina che utilizza la API di chucknorris.io per generare alla pressione di un pulsante una battuta del tipo che selezioni nel menu a tendina qui sotto.</Text>
+      <img src="https://avatars.githubusercontent.com/u/17794049?s=200&v=4" alt="Immagine Chuck Norris" width="280px" height="280px" ></img>
+      <Dropdown id='dropdown' values={categories}></Dropdown>
       <Text variant="copyText" id="jokeToClipboard">{joke}</Text>
       <Button text="CARICA JOKE" callback={loadJokeCallback} />
       <Button text="COPIA" variant={joke == "" ? "disabled" : undefined} callback={copyTextCallback} />
-      <Dropdown id='dropdown' values={categories}></Dropdown>
+      
     </div>
   )
 }
